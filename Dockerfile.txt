@@ -1,0 +1,14 @@
+# Use the official OpenJDK base image
+FROM openjdk:11-jdk
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the Java source file into the container
+COPY src/com/self/Display.java /app
+
+# Compile the Java source file
+RUN javac Display.java
+
+# Define the command to run your application
+CMD ["java", "Display"]
